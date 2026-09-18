@@ -19,6 +19,8 @@ const NewOrder = () => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
+
+  
   useEffect(() => {
     api.get("/menu", { params: { category: activeCategory === "All" ? undefined : activeCategory } })
       .then(({ data }) => setMenuItems(data.filter((i) => i.available)))
@@ -39,7 +41,7 @@ const NewOrder = () => {
       };
     });
   };
-
+  console.log(setNotes)
   const changeQty = (id, delta) => {
     setCart((prev) => {
       const existing = prev[id];
